@@ -1,0 +1,97 @@
+/* Resetting Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting the Background */
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: url('/assets/images/sky-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container to Center Content */
+.container {
+    position: relative;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent Overlay */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Styling the Title */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: tomato;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+/* Fortune Cookie Styling */
+.fortune-cookie {
+    position: relative; /* Establishes a Positioning Context */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.fortune-cookie:hover {
+    transform: scale(1.05);
+}
+
+.fortune-cookie img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+/* Fortune Message Styling */
+.fortune-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent Background */
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    color: #333;
+    max-width: 80%;
+    display: none; /* Hidden by Default */
+    text-align: center;
+    pointer-events: none; /* Allows Clicks to Pass Through */
+    opacity: 0; /* For Fade-in Effect */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1; /* Ensures the Message is on Top */
+}
+
+/* Show the Fortune Message */
+.fortune-message.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .fortune-cookie img {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .fortune-message {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
